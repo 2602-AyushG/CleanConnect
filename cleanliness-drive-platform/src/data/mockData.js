@@ -54,6 +54,60 @@ export const mockDrives = [
     safetyInstructions: "High-visibility vests mandatory, stay away from traffic",
     contactInfo: "safety@roadalliance.org | +91-7654321098",
     sponsors: ["Highway Authority", "SafeRoads Foundation"]
+  },
+  {
+    id: 4,
+    title: "Lake Revival Initiative",
+    description: "Comprehensive cleanup and restoration of the historic Ulsoor Lake to revive its natural ecosystem.",
+    category: "Lake",
+    location: "Ulsoor Lake, Bangalore",
+    date: "2024-08-02",
+    time: "07:30",
+    organizer: "Water Conservation Society",
+    status: "Upcoming",
+    volunteers: ["Ravi Kumar", "Priya Nair", "Suresh Reddy"],
+    maxVolunteers: 60,
+    distance: "3.2 km",
+    poster: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=500",
+    safetyInstructions: "Life jackets provided, no swimming allowed, bring water shoes",
+    contactInfo: "info@waterconservation.org | +91-9123456789",
+    sponsors: ["Bangalore Water Board", "Lake Revival Foundation"]
+  },
+  {
+    id: 5,
+    title: "Metro Station Clean-Up Drive",
+    description: "Keep our metro stations clean and hygienic for daily commuters. Focus on platforms and surrounding areas.",
+    category: "Metro",
+    location: "Rajiv Chowk Metro Station, Delhi",
+    date: "2024-08-05",
+    time: "09:00",
+    organizer: "Delhi Metro Youth Alliance",
+    status: "Upcoming",
+    volunteers: ["Akash Sharma", "Neha Agarwal", "Rohit Singh", "Kavya Jain"],
+    maxVolunteers: 25,
+    distance: "0.8 km",
+    poster: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=500",
+    safetyInstructions: "Follow metro safety protocols, wear masks, sanitize frequently",
+    contactInfo: "youth@delhimetro.org | +91-8987654321",
+    sponsors: ["Delhi Metro Rail Corporation", "Clean Delhi Mission"]
+  },
+  {
+    id: 6,
+    title: "Riverside Plantation Drive",
+    description: "Beautify the Yamuna riverbank with native plant species while removing accumulated waste and debris.",
+    category: "Riverside",
+    location: "Yamuna Riverbank, Agra",
+    date: "2024-07-30",
+    time: "06:30",
+    organizer: "Yamuna Restoration Project",
+    status: "Completed",
+    volunteers: ["Meera Gupta", "Arnav Joshi", "Fatima Khan", "Vicky Tiwari", "Shruti Malhotra", "Karan Vyas"],
+    maxVolunteers: 45,
+    distance: "4.1 km",
+    poster: "https://images.unsplash.com/photo-1574263867128-ab5b0b3bb6bd?w=500",
+    safetyInstructions: "Wear waterproof boots, bring gardening tools, sun protection essential",
+    contactInfo: "yamuna@restoration.org | +91-7456123890",
+    sponsors: ["Agra Development Authority", "River Care Foundation", "Green Agra Initiative"]
   }
 ];
 
@@ -143,7 +197,6 @@ export const userProfile = {
   ],
   coupons: [
     { name: "Eco Store 20% Off", code: "ECO20", expiry: "2024-08-15" },
-    { name: "Green Cafe Free Coffee", code: "COFFEE", expiry: "2024-07-30" },
     { name: "Plant Nursery 15% Off", code: "PLANT15", expiry: "2024-09-01" }
   ]
 }; 

@@ -1,3 +1,14 @@
+body {
+  font-family: 'Calibri', Arial, sans-serif;
+}
+
+@font-face {
+  font-family: 'Algerian';
+  src: local('Algerian');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .App {
   text-align: center;
 }

@@ -8,7 +8,6 @@ const Navbar = () => {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Start a Drive', href: '/start-drive' },
     { name: 'Leaderboard', href: '/leaderboard' },
     { name: 'My Profile', href: '/profile' },
     { name: 'Check Drive Status', href: '/drive-status' },
@@ -17,12 +16,12 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-white shadow-lg fixed w-full top-0 z-50">
+    <nav className="bg-black shadow-lg fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-primary-600">🧼 CleanDrive</span>
+              <span className="text-2xl font-display font-bold text-white">🧼 CleanDrive</span>
             </Link>
           </div>
 
@@ -32,32 +31,28 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                className={`px-4 py-3 rounded-md text-lg font-medium transition-all duration-300 transform hover:scale-105 active:scale-95 ${
                   isActive(item.href)
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-100'
+                    ? 'text-black bg-white shadow-lg'
+                    : 'text-white hover:text-black hover:bg-white hover:shadow-md'
                 }`}
               >
                 {item.name}
               </Link>
             ))}
             
-            {/* SOS Button - Highlighted in Red */}
+            {/* Auth Button */}
             <Link
-              to="/report-issue"
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                isActive('/report-issue')
-                  ? 'bg-danger-600 text-white'
-                  : 'bg-danger-500 text-white hover:bg-danger-600'
-              }`}
+              to="/login"
+              className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-all duration-300"
             >
-              🚨 Trigger SOS
+              Login / Sign Up
             </Link>
 
             {/* Notification Bell */}
-            <button className="p-2 text-gray-400 hover:text-gray-500 relative">
-              <BellIcon className="h-6 w-6" />
-              <span className="absolute top-0 right-0 h-2 w-2 bg-danger-500 rounded-full"></span>
+            <button className="p-2 text-white hover:text-gray-300 relative transition-all duration-300 transform hover:scale-110 active:scale-95 hover:bg-gray-800 rounded-md">
+              <BellIcon className="h-7 w-7" />
+              <span className="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full"></span>
             </button>
           </div>
 
@@ -65,12 +60,12 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-black hover:bg-white transition-all duration-300 transform hover:scale-110 active:scale-95"
             >
               {isMenuOpen ? (
-                <XMarkIcon className="block h-6 w-6" />
+                <XMarkIcon className="block h-7 w-7" />
               ) : (
-                <Bars3Icon className="block h-6 w-6" />
+                <Bars3Icon className="block h-7 w-7" />
               )}
             </button>
           </div>
@@ -80,32 +75,32 @@ const Navbar = () => {
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black border-t border-gray-700">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                className={`block px-3 py-2 rounded-md text-lg font-medium transition-all duration-300 transform hover:scale-105 active:scale-95 ${
                   isActive(item.href)
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-100'
+                    ? 'text-black bg-white shadow-lg'
+                    : 'text-white hover:text-black hover:bg-white hover:shadow-md'
                 }`}
               >
                 {item.name}
               </Link>
             ))}
             <Link
-              to="/report-issue"
+              to="/login"
               onClick={() => setIsMenuOpen(false)}
-              className="block px-3 py-2 rounded-md text-base font-medium bg-danger-500 text-white hover:bg-danger-600"
+              className="block px-3 py-2 rounded-md text-lg font-medium bg-green-600 text-white hover:bg-green-700 transition-all duration-300"
             >
-              🚨 Trigger SOS
+              Login / Sign Up
             </Link>
-            <button className="flex items-center px-3 py-2 text-gray-700">
-              <BellIcon className="h-5 w-5 mr-2" />
+            <button className="flex items-center px-3 py-2 text-white text-lg hover:text-gray-300 transition-all duration-300 transform hover:scale-105 active:scale-95 hover:bg-gray-800 rounded-md">
+              <BellIcon className="h-6 w-6 mr-2" />
               Notifications
-              <span className="ml-2 h-2 w-2 bg-danger-500 rounded-full"></span>
+              <span className="ml-2 h-2 w-2 bg-red-500 rounded-full"></span>
             </button>
           </div>
         </div>

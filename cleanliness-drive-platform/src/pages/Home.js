@@ -1,128 +1,330 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PlayIcon } from '@heroicons/react/24/solid';
+import { PlayIcon, StarIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
+import { 
+  MapPinIcon, 
+  UserGroupIcon, 
+  ChartBarIcon,
+  ClockIcon,
+  ShieldCheckIcon,
+  ArrowPathIcon,
+  CheckCircleIcon,
+  SparklesIcon
+} from '@heroicons/react/24/outline';
 import { testimonials, partnerLogos, galleryImages } from '../data/mockData';
 import GalleryCarousel from '../components/GalleryCarousel';
 import TestimonialBlock from '../components/TestimonialBlock';
 import NGOPartnersSection from '../components/NGOPartnersSection';
 import ContactFooter from '../components/ContactFooter';
+import ReportIssueButton from '../components/ReportIssueButton';
 
 const Home = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen font-body bg-gradient-to-br from-blue-500 via-purple-500 to-blue-600">
+      {/* Navigation/Header Space */}
+      <div className="h-16"></div>
+
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-primary-600 to-primary-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              🧼 CleanDrive Platform
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
-              Empowering communities to create cleaner, healthier environments through 
-              organized cleanup drives and sustainable initiatives.
+      <div className="relative overflow-hidden">
+
+        
+        <div className="relative pt-6 pb-10 min-h-screen flex flex-col justify-start">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div className="text-center">
+              {/* GitHub Star Button */}
+              <div className="flex justify-center mb-6 animate-bounce">
+                <a
+                  href="https://github.com"
+                  className="inline-flex items-center px-6 py-3 bg-gray-800 text-white rounded-full text-sm font-medium hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <StarIcon className="h-4 w-4 mr-2 text-yellow-400" />
+                  ✨ Star us on Github
+                </a>
+              </div>
+
+              {/* Main Heading */}
+              <div className="mb-6">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold text-black leading-tight mb-4">
+                  Streamline Your
+                </h1>
+                <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold text-black leading-tight">
+                  Community Cleanup
+                </h1>
+              </div>
+
+              {/* Subtitle */}
+              <p className="text-xl md:text-2xl lg:text-3xl text-black max-w-5xl mx-auto mb-8 leading-relaxed font-medium">
+                Efficient drive organization, seamless volunteer coordination,
+                and intelligent impact tracking for modern environmental initiatives.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                <Link
+                  to="/start-drive"
+                  className="group bg-green-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-green-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-2 flex items-center justify-center"
+                >
+                  Start a Drive
+                  <ArrowRightIcon className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  to="/drive-status"
+                  className="group border-3 border-gray-800 bg-white text-gray-800 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-2 flex items-center justify-center"
+                >
+                  Join Drives
+                  <UserGroupIcon className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                </Link>
+              </div>
+
+              {/* Trust indicators */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+                <div className="flex items-center justify-center space-x-2 text-black">
+                  <CheckCircleIcon className="h-6 w-6 text-green-500" />
+                  <span className="font-medium">Trusted by 500+ organizations</span>
+                </div>
+                <div className="flex items-center justify-center space-x-2 text-black">
+                  <CheckCircleIcon className="h-6 w-6 text-green-500" />
+                  <span className="font-medium">15,000+ active volunteers</span>
+                </div>
+                <div className="flex items-center justify-center space-x-2 text-black">
+                  <CheckCircleIcon className="h-6 w-6 text-green-500" />
+                  <span className="font-medium">2M kg waste collected</span>
+                </div>
+          </div>
+          
+              {/* Cleanup Drive Gallery */}
+              <div className="mb-8">
+                <div className="grid grid-cols-4 gap-4 w-full">
+                  {/* Top Row */}
+                  <div 
+                    className="hover:opacity-90 transition-all duration-300 aspect-square"
+                    style={{
+                      backgroundImage: 'url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80)',
+                      backgroundSize: 'cover',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'center',
+                      borderRadius: '8px'
+                    }}
+                    aria-label="Community beach cleanup"
+                  />
+                  <div 
+                    className="hover:opacity-90 transition-all duration-300 aspect-square"
+                    style={{
+                      backgroundImage: 'url(https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80)',
+                      backgroundSize: 'cover',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'center',
+                      borderRadius: '8px'
+                    }}
+                    aria-label="Volunteers cleaning park"
+                  />
+                  <div 
+                    className="hover:opacity-90 transition-all duration-300 aspect-square"
+                    style={{
+                      backgroundImage: 'url(https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80)',
+                      backgroundSize: 'cover',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'center',
+                      borderRadius: '8px'
+                    }}
+                    aria-label="River cleanup volunteers"
+                  />
+                  <div 
+                    className="hover:opacity-90 transition-all duration-300 aspect-square"
+                    style={{
+                      backgroundImage: 'url(https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80)',
+                      backgroundSize: 'cover',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'center',
+                      borderRadius: '8px'
+                    }}
+                    aria-label="Community cleanup volunteers"
+                  />
+                  
+                  {/* Bottom Row */}
+                  <div 
+                    className="hover:opacity-90 transition-all duration-300 aspect-square"
+                    style={{
+                      backgroundImage: 'url(https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80)',
+                      backgroundSize: 'cover',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'center',
+                      borderRadius: '8px'
+                    }}
+                    aria-label="Volunteers cleaning environment"
+                  />
+                  <div 
+                    className="hover:opacity-90 transition-all duration-300 aspect-square"
+                    style={{
+                      backgroundImage: 'url(https://images.unsplash.com/photo-1586348943529-beaae6c28db9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80)',
+                      backgroundSize: 'cover',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'center',
+                      borderRadius: '8px'
+                    }}
+                    aria-label="Park cleanup initiative"
+                  />
+                  <div 
+                    className="hover:opacity-90 transition-all duration-300 aspect-square"
+                    style={{
+                      backgroundImage: 'url(https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80)',
+                      backgroundSize: 'cover',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'center',
+                      borderRadius: '8px'
+                    }}
+                    aria-label="Coastal cleanup team"
+                  />
+                  <div 
+                    className="hover:opacity-90 transition-all duration-300 aspect-square"
+                    style={{
+                      backgroundImage: 'url(https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80)',
+                      backgroundSize: 'cover',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'center',
+                      borderRadius: '8px'
+                    }}
+                    aria-label="Volunteers with trash bags"
+                  />
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Powerful Features Section */}
+      <div className="py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-black mb-6">
+              Our Powerful Features
+            </h2>
+            <p className="text-lg md:text-xl text-black max-w-4xl mx-auto">
+              Everything you need to organize, manage, and scale your environmental impact
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/start-drive"
-                className="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
-              >
-                Start a Drive
-              </Link>
-              <Link
-                to="/drive-status"
-                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-colors duration-200"
-              >
-                Join a Drive
-              </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {/* Drive Management */}
+            <div className="group p-4 rounded-2xl hover:bg-gray-50 transition-all duration-300 text-center">
+              <div className="bg-green-500 w-12 h-12 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 mx-auto">
+                <UserGroupIcon className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-display font-semibold text-black mb-2">
+                Drive Management
+              </h3>
+              <p className="text-sm text-black leading-relaxed">
+                Real-time tracking and optimization of cleanup drives
+              </p>
+            </div>
+
+            {/* Location Visibility */}
+            <div className="group p-4 rounded-2xl hover:bg-gray-50 transition-all duration-300 text-center">
+              <div className="bg-emerald-500 w-12 h-12 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 mx-auto">
+                <MapPinIcon className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-display font-semibold text-black mb-2">
+                Location Visibility
+              </h3>
+              <p className="text-sm text-black leading-relaxed">
+                End-to-end visibility with real-time mapping
+              </p>
+            </div>
+
+            {/* Impact Forecasting */}
+            <div className="group p-4 rounded-2xl hover:bg-gray-50 transition-all duration-300 text-center">
+              <div className="bg-teal-500 w-12 h-12 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 mx-auto">
+                <ChartBarIcon className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-display font-semibold text-black mb-2">
+                Impact Forecasting
+              </h3>
+              <p className="text-sm text-black leading-relaxed">
+                AI-powered prediction for optimal impact
+              </p>
+            </div>
+
+            {/* Drive Tracking */}
+            <div className="group p-4 rounded-2xl hover:bg-gray-50 transition-all duration-300 text-center">
+              <div className="bg-blue-500 w-12 h-12 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 mx-auto">
+                <ClockIcon className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-display font-semibold text-black mb-2">
+                Drive Tracking
+              </h3>
+              <p className="text-sm text-black leading-relaxed">
+                Real-time updates on drive status
+              </p>
+            </div>
+
+            {/* Safety Management */}
+            <div className="group p-4 rounded-2xl hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 transition-all duration-300 text-center">
+              <div className="bg-gradient-to-br from-purple-500 to-pink-600 w-12 h-12 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 mx-auto">
+                <ShieldCheckIcon className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-display font-semibold text-black mb-2">
+                Safety Management
+              </h3>
+              <p className="text-sm text-black leading-relaxed">
+                Ensure adherence to safety regulations
+              </p>
+            </div>
+
+            {/* Automated Coordination */}
+            <div className="group p-4 rounded-2xl hover:bg-gradient-to-br hover:from-orange-50 hover:to-red-50 transition-all duration-300 text-center">
+              <div className="bg-gradient-to-br from-orange-500 to-red-600 w-12 h-12 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 mx-auto">
+                <ArrowPathIcon className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-display font-semibold text-black mb-2">
+                Automated Coordination
+              </h3>
+              <p className="text-sm text-black leading-relaxed">
+                Smart coordination with machine learning
+              </p>
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
       </div>
 
-      {/* Mission Statement */}
-      <div className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            To build a sustainable future by connecting passionate individuals and organizations 
-            in meaningful environmental action. Through our platform, we facilitate seamless 
-            coordination of cleanup drives, promote community engagement, and track collective 
-            impact towards a cleaner planet.
-          </p>
-        </div>
-      </div>
-
-      {/* Stats Section */}
-      <div className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="text-3xl font-bold text-primary-600 mb-2">500+</div>
-              <div className="text-gray-600">Drives Organized</div>
+      {/* Our Impact in Numbers Section */}
+      <div className="py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-black mb-4">
+              Our Impact in Numbers
+            </h2>
+            <p className="text-lg text-black">
+              See the difference we're making together
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+            <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+              <div className="text-4xl font-bold text-green-600 mb-2">500+</div>
+              <div className="text-gray-700 font-medium">Drives Organized</div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="text-3xl font-bold text-primary-600 mb-2">15,000+</div>
-              <div className="text-gray-600">Volunteers</div>
+            <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+              <div className="text-4xl font-bold text-blue-600 mb-2">15,000+</div>
+              <div className="text-gray-700 font-medium">Active Volunteers</div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="text-3xl font-bold text-primary-600 mb-2">50+</div>
-              <div className="text-gray-600">Cities</div>
+            <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+              <div className="text-4xl font-bold text-purple-600 mb-2">50+</div>
+              <div className="text-gray-700 font-medium">Cities Covered</div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="text-3xl font-bold text-primary-600 mb-2">2M kg</div>
-              <div className="text-gray-600">Waste Collected</div>
+            <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+              <div className="text-4xl font-bold text-orange-600 mb-2">2M kg</div>
+              <div className="text-gray-700 font-medium">Waste Collected</div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Gallery Section */}
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Drives in Action
-          </h2>
-          <GalleryCarousel images={galleryImages} />
-        </div>
-      </div>
-
-      {/* Video Section */}
-      <div className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">See Our Impact</h2>
-          <div className="relative bg-gray-300 rounded-lg overflow-hidden aspect-video">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <button className="bg-primary-600 text-white p-4 rounded-full hover:bg-primary-700 transition-colors duration-200">
-                <PlayIcon className="h-8 w-8" />
-              </button>
-            </div>
-            <div className="absolute bottom-4 left-4 text-white font-semibold">
-              CleanDrive Impact Video 2024
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Testimonials */}
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            What Our Community Says
-          </h2>
-          <TestimonialBlock testimonials={testimonials} />
-        </div>
-      </div>
-
-      {/* Partner Organizations */}
-      <div className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <NGOPartnersSection partners={partnerLogos} />
         </div>
       </div>
 
       {/* Contact Footer */}
       <ContactFooter />
+      
+      {/* Report Issue Button */}
+      <ReportIssueButton />
     </div>
   );
 };

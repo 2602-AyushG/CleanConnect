@@ -19,7 +19,7 @@ const DriveDetail = () => {
 
   if (!drive) {
     return (
-      <div className="min-h-screen bg-gray-50 py-8">
+      <div className="min-h-screen py-8 bg-gradient-to-br from-blue-500 via-purple-500 to-blue-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Drive Not Found</h1>
           <p className="text-gray-600">The cleanup drive you're looking for doesn't exist.</p>
@@ -52,12 +52,12 @@ const DriveDetail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen py-8 font-body bg-gradient-to-br from-blue-500 via-purple-500 to-blue-600">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
           {/* Drive Image */}
-          <div className="h-64 bg-gray-300 relative">
+          <div className="h-64 bg-green-200 relative">
             <img
               src={drive.poster}
               alt={drive.title}
@@ -68,8 +68,8 @@ const DriveDetail = () => {
                 drive.status === 'Upcoming' 
                   ? 'bg-green-100 text-green-800'
                   : drive.status === 'Completed'
-                  ? 'bg-gray-100 text-gray-800'
-                  : 'bg-blue-100 text-blue-800'
+                  ? 'bg-black text-white'
+                  : 'bg-green-50 text-green-900'
               }`}>
                 {drive.status}
               </span>
@@ -79,7 +79,7 @@ const DriveDetail = () => {
           {/* Drive Info */}
           <div className="p-6">
             <div className="flex justify-between items-start mb-4">
-              <h1 className="text-3xl font-bold text-gray-900">{drive.title}</h1>
+              <h1 className="text-3xl font-display font-bold text-black">{drive.title}</h1>
               <div className="flex space-x-2">
                 <button
                   onClick={handleShareDrive}
@@ -117,28 +117,28 @@ const DriveDetail = () => {
               </div>
             </div>
 
-            <p className="text-gray-700 text-lg leading-relaxed mb-6">{drive.description}</p>
+            <p className="text-black text-lg leading-relaxed mb-6">{drive.description}</p>
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               {!hasJoined ? (
                 <button
                   onClick={handleJoinDrive}
-                  className="flex-1 bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors duration-200 font-medium"
+                  className="flex-1 bg-green-700 text-white px-6 py-3 rounded-full hover:bg-green-800 transition-colors duration-200 font-display text-lg"
                 >
                   Join This Drive
                 </button>
               ) : (
                 <button
                   disabled
-                  className="flex-1 bg-green-600 text-white px-6 py-3 rounded-lg font-medium cursor-not-allowed"
+                  className="flex-1 bg-black text-white px-6 py-3 rounded-full font-display text-lg cursor-not-allowed"
                 >
                   ✓ Joined
                 </button>
               )}
               <button
                 onClick={handleShareDrive}
-                className="flex-1 border border-primary-600 text-primary-600 px-6 py-3 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-medium"
+                className="flex-1 border border-green-700 text-green-700 px-6 py-3 rounded-full hover:bg-green-100 transition-colors duration-200 font-display text-lg"
               >
                 Share Drive
               </button>
@@ -151,48 +151,48 @@ const DriveDetail = () => {
           <div className="lg:col-span-2 space-y-6">
             {/* Details */}
             <div className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">Drive Details</h2>
+              <h2 className="text-xl font-display font-semibold text-black mb-4">Drive Details</h2>
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-medium text-gray-900 mb-2">Category</h3>
-                  <span className="inline-block bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm">
+                  <h3 className="font-medium text-black mb-2">Category</h3>
+                  <span className="inline-block bg-green-200 text-green-900 px-3 py-1 rounded-full text-sm">
                     {drive.category}
                   </span>
                 </div>
                 <div>
-                  <h3 className="font-medium text-gray-900 mb-2">Organizer</h3>
-                  <p className="text-gray-700">{drive.organizer}</p>
+                  <h3 className="font-medium text-black mb-2">Organizer</h3>
+                  <p className="text-green-900">{drive.organizer}</p>
                 </div>
                 <div>
-                  <h3 className="font-medium text-gray-900 mb-2">Distance from you</h3>
-                  <p className="text-gray-700">{drive.distance}</p>
+                  <h3 className="font-medium text-black mb-2">Distance from you</h3>
+                  <p className="text-green-900">{drive.distance}</p>
                 </div>
               </div>
             </div>
 
             {/* Safety Instructions */}
             <div className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                <ExclamationTriangleIcon className="h-5 w-5 mr-2 text-orange-500" />
+              <h2 className="text-xl font-display font-semibold text-black mb-4 flex items-center">
+                <ExclamationTriangleIcon className="h-5 w-5 mr-2 text-green-500" />
                 Safety Instructions
               </h2>
-              <p className="text-gray-700">{drive.safetyInstructions}</p>
+              <p className="text-green-900">{drive.safetyInstructions}</p>
             </div>
 
             {/* Contact Information */}
             <div className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">Contact Information</h2>
-              <p className="text-gray-700">{drive.contactInfo}</p>
+              <h2 className="text-xl font-display font-semibold text-black mb-4">Contact Information</h2>
+              <p className="text-green-900">{drive.contactInfo}</p>
             </div>
 
             {/* Sponsors */}
             <div className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">Sponsors & Support</h2>
+              <h2 className="text-xl font-display font-semibold text-black mb-4">Sponsors & Support</h2>
               <div className="flex flex-wrap gap-2">
                 {drive.sponsors.map((sponsor, index) => (
                   <span
                     key={index}
-                    className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                    className="bg-green-100 text-green-900 px-3 py-1 rounded-full text-sm"
                   >
                     {sponsor}
                   </span>

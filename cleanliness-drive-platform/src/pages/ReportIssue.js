@@ -43,28 +43,28 @@ const ReportIssue = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen py-8 font-body bg-gradient-to-br from-blue-500 via-purple-500 to-blue-600">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <div className="bg-danger-100 p-4 rounded-full">
-              <ExclamationTriangleIcon className="h-12 w-12 text-danger-600" />
+            <div className="bg-green-200 p-4 rounded-full">
+              <ExclamationTriangleIcon className="h-12 w-12 text-green-800" />
             </div>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">🚨 Report an Issue</h1>
-          <p className="text-lg text-gray-600">
+          <h1 className="text-4xl md:text-5xl font-display font-black text-black mb-4">Report an Issue</h1>
+          <p className="text-xl md:text-2xl text-blue-900 font-bold">
             Report environmental emergencies, safety concerns, or request immediate assistance
           </p>
         </div>
 
         {/* Emergency Notice */}
-        <div className="bg-danger-50 border border-danger-200 rounded-lg p-6 mb-8">
+        <div className="bg-green-100 border border-green-300 rounded-lg p-6 mb-8">
           <div className="flex items-start">
-            <ExclamationTriangleIcon className="h-6 w-6 text-danger-600 mt-1 mr-3 flex-shrink-0" />
+            <ExclamationTriangleIcon className="h-6 w-6 text-green-800 mt-1 mr-3 flex-shrink-0" />
             <div>
-              <h3 className="text-lg font-semibold text-danger-800 mb-2">Emergency Response</h3>
-              <p className="text-danger-700">
+              <h3 className="text-lg font-display font-semibold text-black mb-2">Emergency Response</h3>
+              <p className="text-green-900">
                 For life-threatening emergencies, please call <strong>emergency services (911)</strong> immediately. 
                 This form is for environmental concerns and non-emergency assistance requests.
               </p>
@@ -77,7 +77,7 @@ const ReportIssue = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Urgency Level */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2 text-left">
                 Urgency Level *
               </label>
               <select
@@ -85,7 +85,7 @@ const ReportIssue = () => {
                 required
                 value={formData.urgency}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-danger-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-black bg-white"
               >
                 <option value="low">Low - General inquiry or suggestion</option>
                 <option value="medium">Medium - Issue needs attention</option>
@@ -106,7 +106,7 @@ const ReportIssue = () => {
                 required
                 value={formData.subject}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-danger-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-black bg-white"
                 placeholder="Brief description of the issue"
               />
             </div>
@@ -123,7 +123,7 @@ const ReportIssue = () => {
                 required
                 value={formData.location}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-danger-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-black bg-white"
                 placeholder="Where is the issue located?"
               />
             </div>
@@ -140,7 +140,7 @@ const ReportIssue = () => {
                 rows={6}
                 value={formData.description}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-danger-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-black bg-white"
                 placeholder="Please provide as much detail as possible about the issue, including what happened, when it occurred, and any immediate risks..."
               />
             </div>
@@ -157,7 +157,7 @@ const ReportIssue = () => {
                 required
                 value={formData.contact}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-danger-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-black bg-white"
                 placeholder="Phone number or email for immediate contact"
               />
             </div>
@@ -167,13 +167,13 @@ const ReportIssue = () => {
               <label htmlFor="file" className="block text-sm font-medium text-gray-700 mb-2">
                 Supporting Evidence (Optional)
               </label>
-              <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md hover:border-danger-400 transition-colors duration-200">
+              <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md hover:border-green-400 transition-colors duration-200">
                 <div className="space-y-1 text-center">
                   <CloudArrowUpIcon className="mx-auto h-12 w-12 text-gray-400" />
                   <div className="flex text-sm text-gray-600">
                     <label
                       htmlFor="file"
-                      className="relative cursor-pointer bg-white rounded-md font-medium text-danger-600 hover:text-danger-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-danger-500"
+                      className="relative cursor-pointer bg-white rounded-md font-medium text-green-600 hover:text-green-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-500"
                     >
                       <span>Upload photos or documents</span>
                       <input
@@ -201,9 +201,9 @@ const ReportIssue = () => {
             <div className="pt-4">
               <button
                 type="submit"
-                className="w-full bg-danger-600 text-white py-3 px-4 rounded-md hover:bg-danger-700 focus:outline-none focus:ring-2 focus:ring-danger-500 focus:ring-offset-2 transition-colors duration-200 font-medium"
+                className="w-full bg-green-700 text-white font-bold py-3 rounded-full hover:bg-green-800 transition-colors duration-200 font-display text-lg"
               >
-                Submit Issue Report
+                Submit Issue
               </button>
             </div>
           </form>
